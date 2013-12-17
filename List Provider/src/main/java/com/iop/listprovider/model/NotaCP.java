@@ -8,7 +8,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.iop.listprovider.helpers.DBHelper;
 
@@ -31,7 +30,7 @@ public class NotaCP extends ContentProvider {
     private static final int NOTAS_ID = 2;
 
     // Especifica o URI
-    // CONTENT_URI será: URI://com.iop.listprovider.model.NotaCP/notas/
+    // CONTENT_URI será: content://com.iop.listprovider.model.NotaCP/notas/
     private static final String AUTHORITY = "com.iop.listprovider.model.NotaCP";
     private static final String BASE_PATH = "notas";
     public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/" + BASE_PATH);
@@ -39,9 +38,9 @@ public class NotaCP extends ContentProvider {
     // URI MATCHER
     private static final UriMatcher sURIMatcher = new UriMatcher(UriMatcher.NO_MATCH);
     static {
-        // URI://com.iop.listprovider.model.NotaCP/notas/1/
+        // content://com.iop.listprovider.model.NotaCP/notas/1/
         sURIMatcher.addURI(AUTHORITY, BASE_PATH, NOTAS);
-        // URI://com.iop.listprovider.model.NotaCP/notas/2/#
+        // content://com.iop.listprovider.model.NotaCP/notas/2/#
         sURIMatcher.addURI(AUTHORITY, BASE_PATH + "/#", NOTAS_ID);
     }
 
@@ -64,12 +63,12 @@ public class NotaCP extends ContentProvider {
         int uriTipo = sURIMatcher.match(uri);
         switch (uriTipo) {
             // Busca TODAS as notas (não é necessário especificar nada dentro do case)
-            // Exemplo: URI://com.iop.listprovider.model.NotaCP/notas/
+            // Exemplo: content://com.iop.listprovider.model.NotaCP/notas/
             case NOTAS:
                 break;
 
             // Busca apenas a nota com o ID especificado
-            // Exemplo: URI://com.iop.listprovider.model.NotaCP/notas/5 (5 é o ID da nota)
+            // Exemplo: content://com.iop.listprovider.model.NotaCP/notas/5 (5 é o ID da nota)
             case NOTAS_ID:
                 queryBuilder.appendWhere(Nota.ID+"="+uri.getLastPathSegment());
                 break;

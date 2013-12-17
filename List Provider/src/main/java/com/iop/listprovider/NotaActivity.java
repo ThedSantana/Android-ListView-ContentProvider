@@ -123,7 +123,7 @@ public class NotaActivity extends ActionBarActivity{
         valores.put(Nota.DESCRICAO, etDescricao.getText().toString());
 
         // Insere os valores utilizando o Content Provider
-        // URI passada como parâmetro: URI://com.iop.listprovider.model.NotaCP/notas/
+        // URI passada como parâmetro: content://com.iop.listprovider.model.NotaCP/notas/
         Uri resultado = getContentResolver().insert(NotaCP.CONTENT_URI, valores);
 
         // O método insert do Content Provider retorna o URI com o ID da nota inserida
@@ -159,7 +159,7 @@ public class NotaActivity extends ActionBarActivity{
         valores.put(Nota.DESCRICAO, etDescricao.getText().toString());
 
         // Atualiza os valores utilizando o Content Provider
-        // URI passada como parâmetro: URI://com.iop.listprovider.model.NotaCP/notas/ID
+        // URI passada como parâmetro: content://com.iop.listprovider.model.NotaCP/notas/ID
 
         int resultado = getContentResolver().update(Uri.parse(NotaCP.CONTENT_URI+"/"+idNota), valores, null, null);
         if (resultado == -1){

@@ -77,8 +77,9 @@ public class MainActivity extends ActionBarActivity implements LoaderManager.Loa
                 Nota.TITULO, Nota.DESCRICAO_RESUMIDA };
 
         // Cria um Loader com a URI do ContentProvider (NotaCP)
-        // A URI é: URI://com.iop.listprovider.model.NotaCP/notas/ (todas as notas)
-        return new CursorLoader(this, NotaCP.CONTENT_URI, colunas, null, null, null);
+        // As notas serão ordenadas conforme a data de edição/criação
+        // A URI é: content://com.iop.listprovider.model.NotaCP/notas/ (todas as notas)
+        return new CursorLoader(this, NotaCP.CONTENT_URI, colunas, null, null, "data DESC");
     }
 
     // Quando terminar de carregar o Loader
