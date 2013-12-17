@@ -16,7 +16,7 @@ public class Nota {
     public static String ID = "_id";
     public static String DATA = "data";
 
-    // Prioridade, tipos e cores
+    // Prioridade e tipos (as cores estão em /values/colors.xml)
     public static String PRIORIDADE = "prioridade";
     public static int PRIORIDADE_BAIXA = 0;
     public static int PRIORIDADE_MEDIA = 1;
@@ -30,6 +30,7 @@ public class Nota {
     // SUBSTR: Obtêm apenas uma parte da string (de 0 até 21)
     // REPLACE: Substitui as quebras de linha (\n) por espaços
     public static int DESCRICAO_RESUMIDA_TAM = 21;
-    public static String DESCRICAO_RESUMIDA = "REPLACE(SUBSTR(descricao, 0, "+DESCRICAO_RESUMIDA_TAM+"),'\n',' ') as descricao";
+    public static String DESCRICAO_RESUMIDA = "REPLACE(SUBSTR(descricao, 0, " +
+            DESCRICAO_RESUMIDA_TAM+"),'\n',' ') as descricao";
 
 }
