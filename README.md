@@ -8,7 +8,7 @@ Um aplicativo simples de anotações que tem como intuito mostrar a implementaç
 
 ###Recursos
 ####Principais
-* <b>ContentProvider</b>: Manipula o acesso a banco de dados estruturados. Incluindo todos os métodos básicos de um CRUD: <i>Create, Read, Update</i> e <i>Delete</i>. Geralmente são confundidos como uma forma de compartilhar dados de forma pública entre diferentes aplicações em um mesmo dispositivo, o que de certa forma não está incorreto, porém, também é possível que estes dados permaneçam privados, como é o caso deste aplicativo. ([Documentação Oficial](http://developer.android.com/guide/topics/providers/content-providers.html))
+* <b>ContentProvider</b>: Manipula o acesso a banco de dados estruturados. Inclui todos os métodos básicos de um CRUD: <i>Create, Read, Update</i> e <i>Delete</i>. Geralmente são confundidos como uma forma de compartilhar dados de forma pública entre diferentes aplicações em um mesmo dispositivo, o que de certa forma não está incorreto, porém, também é possível que estes dados permaneçam privados, como é o caso deste aplicativo. ([Documentação Oficial](http://developer.android.com/guide/topics/providers/content-providers.html))
 * <b>CursorLoader</b>: Utilizado para carregar os dados fora da UI Thread (ou seja, de forma assíncrona). ([Documentação Oficial](http://developer.android.com/reference/android/content/CursorLoader.html))
 * <b>CursorAdapter</b>: Vincula os dados de um Cursor para um ListView. ([Documentação Oficial](http://developer.android.com/reference/android/widget/CursorAdapter.html))
 
