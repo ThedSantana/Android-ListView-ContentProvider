@@ -1,7 +1,10 @@
 Android: List Provider
 ======================
+
 ###Descrição
 Um aplicativo simples de anotações que tem como intuito mostrar a implementação de um <b>ContentProvider</b> e <b>CursorLoader</b> para carregar dados de um BD SQLite de forma assíncrona em um <b>ListView</b> (utilizando CursorAdapter).
+
+![screenshot](http://i.imgur.com/EZSuBdh.png)
 
 ###Recursos
 ####Principais
