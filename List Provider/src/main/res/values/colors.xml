@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="prioridade_baixa">#669900</color>
+    <color name="prioridade_media">#FF8800</color>
+    <color name="prioridade_alta">#CC0000</color>
+</resources>

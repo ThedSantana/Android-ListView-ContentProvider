@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingRight="@dimen/activity_margin">
+
+    <ImageView
+        android:layout_width="@dimen/activity_margin"
+        android:layout_height="match_parent"
+        android:id="@+id/iv_prioridade"
+        android:background="#99CC00"
+        android:adjustViewBounds="true"
+        android:baselineAlignBottom="true"
+        android:scaleType="centerCrop"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_titulo"
+            android:hint="@string/new_note_title_hint"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            android:inputType="textCapSentences"
+            android:maxLength="60"/>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sp_prioridade"
+            android:entries="@array/spinner_prioridade"
+            android:layout_marginTop="8dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapSentences|textMultiLine"
+            android:ems="10"
+            android:id="@+id/et_descricao"
+            android:layout_gravity="center_horizontal"
+            android:hint="@string/new_note_descr_hint"
+            android:layout_marginTop="8dp"
+            android:maxLength="1000"/>
+    </LinearLayout>
+
+
+</LinearLayout>

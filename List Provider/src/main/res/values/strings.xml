@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Título das Activities !-->
+    <string name="app_name">List Provider</string>
+    <string name="title_activity_new">Nova nota</string>
+
+    <!-- Lista !-->
+    <string name="action_new_note">Nova nota</string>
+    <string name="action_save_note">Salvar nota</string>
+
+    <!-- Nova nota !-->
+    <string name="new_note_title_hint">Nova nota</string>
+    <string name="new_note_descr_hint">Nota</string>
+
+    <!-- Avisos !-->
+    <string name="new_note_success">Nota adicionada!</string>
+    <string name="new_note_fail">Erro ao adicionar a nota!</string>
+
+    <string name="edit_note_success">Nota salva!</string>
+    <string name="edit_note_fail">Erro ao salvar a nota!</string>
+    <string name="edit_note_request_fail">Erro ao obter a nota!</string>
+
+    <string name="delete_note_success">Nota apagada!</string>
+    <string name="delete_note_fail">Erro ao apagar a nota!</string>
+
+
+</resources>
