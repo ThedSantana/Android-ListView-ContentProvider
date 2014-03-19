@@ -1,5 +1,6 @@
 package com.iop.listprovider;
 
+import android.content.AsyncQueryHandler;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -102,13 +103,10 @@ public class NotaActivity extends ActionBarActivity{
     }
 
     /**
-     * Métodos responsáveis por adicionar ou editar uma nota
+     * Métodos responsáveis por ADICIONAR uma nota
      */
 
     private void addNota(){
-        // Log
-        Log.e("NOTA", "addNota()");
-
         // Utilizado para converter a data atual para milisegundos
         DateHelper tempo = new DateHelper();
 
@@ -122,8 +120,23 @@ public class NotaActivity extends ActionBarActivity{
         valores.put(Nota.TITULO, etTitulo.getText().toString());
         valores.put(Nota.DESCRICAO, etDescricao.getText().toString());
 
-        // Insere os valores utilizando o Content Provider
-        // URI passada como parâmetro: content://com.iop.listprovider.model.NotaCP/notas/
+        // Inserção assíncrona
+        addNotaAsync(valores);
+
+        // Inserção síncrona
+        //addNotaSync(valores);
+    }
+
+    private void addNotaAsync(ContentValues valores){
+        Log.e("NOTA", "addNotaAsync()");
+
+        AsyncQueryHandler mHandler = new AsyncQueryHandler(getContentResolver()) {};
+        mHandler.startInsert(-1, null, NotaCP.CONTENT_URI, valores);
+        finish();
+    }
+
+    private void addNotaSync(ContentValues valores){
+        Log.e("NOTA", "addNotaSync()");
         Uri resultado = getContentResolver().insert(NotaCP.CONTENT_URI, valores);
 
         // O método insert do Content Provider retorna o URI com o ID da nota inserida
@@ -141,10 +154,11 @@ public class NotaActivity extends ActionBarActivity{
         }
     }
 
-    private void editaNota(){
-        // Log
-        Log.e("NOTA", "editaNota()");
+    /**
+     * Métodos responsáveis por EDITAR uma nota
+     */
 
+    private void editaNota(){
         // Utilizado para converter a data atual para milisegundos
         DateHelper tempo = new DateHelper();
 
@@ -158,8 +172,23 @@ public class NotaActivity extends ActionBarActivity{
         valores.put(Nota.TITULO, etTitulo.getText().toString());
         valores.put(Nota.DESCRICAO, etDescricao.getText().toString());
 
-        // Atualiza os valores utilizando o Content Provider
-        // URI passada como parâmetro: content://com.iop.listprovider.model.NotaCP/notas/ID
+        // Edição assíncrona
+        editaNotaAsync(valores);
+
+        // Edição síncrona
+        //editaNotaSync(valores);
+    }
+
+    private void editaNotaAsync(ContentValues valores){
+        Log.e("NOTA", "editaNotaAsync()");
+
+        AsyncQueryHandler mHandler = new AsyncQueryHandler(getContentResolver()) {};
+        mHandler.startUpdate(-1, null, Uri.parse(NotaCP.CONTENT_URI+"/"+idNota), valores, null, null);
+        finish();
+    }
+
+    private void editaNotaSync(ContentValues valores){
+        Log.e("NOTA", "editaNotaSync()");
 
         int resultado = getContentResolver().update(Uri.parse(NotaCP.CONTENT_URI+"/"+idNota), valores, null, null);
         if (resultado == -1){
