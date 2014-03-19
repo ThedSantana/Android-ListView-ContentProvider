@@ -15,7 +15,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.iop.listprovider.helpers.UIHelper;
-import com.iop.listprovider.model.Nota;
 import com.iop.listprovider.model.NotaCP;
 
 /**
@@ -47,10 +46,6 @@ public class NotaLVAdapter extends CursorAdapter {
         int idPrioridade = cursor.getInt(2);
         String tituloNota = cursor.getString(3);
         String descricaoNota = cursor.getString(4);
-
-        if (descricaoNota != null && descricaoNota.length() == Nota.DESCRICAO_RESUMIDA_TAM-1){
-            descricaoNota += "...";
-        }
 
         // Título e descrição da nota
         ((TextView) view.findViewById(R.id.tv_titulo_nota)).setText(tituloNota);

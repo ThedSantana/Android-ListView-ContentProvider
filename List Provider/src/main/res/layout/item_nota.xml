@@ -37,17 +37,20 @@
                 android:id="@+id/tv_titulo_nota"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Titulo"
                 android:textColor="@android:color/primary_text_light"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:ellipsize="end"
+                android:singleLine="true"/>
 
             <TextView
                 android:id="@+id/tv_descricao_nota"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nota"
                 android:textColor="@android:color/secondary_text_light"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                />
 
         </LinearLayout>
 

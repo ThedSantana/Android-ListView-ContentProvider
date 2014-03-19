@@ -27,9 +27,9 @@ public class Nota {
     public static String DESCRICAO = "descricao";
 
     // Usada para obter apenas o começo da string descrição
-    // SUBSTR: Obtêm apenas uma parte da string (de 0 até 21)
+    // SUBSTR: Obtêm apenas uma parte da string (de 0 até 50)
     // REPLACE: Substitui as quebras de linha (\n) por espaços
-    public static int DESCRICAO_RESUMIDA_TAM = 21;
+    public static int DESCRICAO_RESUMIDA_TAM = 50;
     public static String DESCRICAO_RESUMIDA = "REPLACE(SUBSTR(descricao, 0, " +
             DESCRICAO_RESUMIDA_TAM+"),'\n',' ') as descricao";
 
